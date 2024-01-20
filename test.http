@@ -1,0 +1,9 @@
+//GET http://localhost:4004/odata/v4/say/printHello(input='World')
+
+
+POST http://localhost:4004/odata/v4/say/printBye
+Content-Type: application/json
+
+{
+  "input" :"India"
+}
