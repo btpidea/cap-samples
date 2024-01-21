@@ -1,9 +1,12 @@
 //GET http://localhost:4004/odata/v4/say/printHello(input='World')
 
 
-POST http://localhost:4004/odata/v4/say/printBye
+POST http://localhost:4004/odata/v4/admin/Books
 Content-Type: application/json
 
 {
-  "input" :"India"
-}
+      "ID": 3,
+      "title": "BTP Mentor",
+      "stock": 95,
+      "prices": 100
+    }
