@@ -1,3 +1,6 @@
-ID,title,descr,stock,prices
-1,Shakespeare,English Novel,100,23
-2,John Bradley,French Novel,80,23
+ID,title,author_ID,stock,prices,someadditionalfield
+201,Wuthering Heights,101,12,100,Hello
+207,Jane Eyre,107,11,400,bye
+251,The Raven,150,333,200
+252,Eleonora,150,555,120
+271,Catweazle,170,22,140

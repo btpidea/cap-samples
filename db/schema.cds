@@ -1,9 +1,53 @@
 namespace sap.capire.bookshop;
-//in the database, the full name of entity wil change to sap.capire.bookshop.Books{}
-entity Books {
-    Key ID: Integer;
-    title: String;
-    descr: String;
-    stock: Integer;
-    prices: Integer;
+using { cuid,managed } from '@sap/cds/common';
+//LCNC
+
+//aspect cuid{ key ID: UUID}
+aspect stocks{ stock: Integer}
+// entity Books: cuid, stocks,managed {
+//     title : String;
+//     descr : String;
+//     prices : Integer;
+// }
+
+
+entity Books
+{ 
+    key ID: Integer;
+    title : String;
+    author: Association to Authors;
+    stock:Integer;
+    prices : Integer;
+}
+
+extend Books with {
+    someadditionalfield: String
+}
+
+entity Authors {
+    key ID: Integer;
+    name : String(100);
+    books: Association to many Books on books.author = $self;
+}
+
+
+// entity Orders {
+//     OrderID: Integer;
+//     items: Composition of many OrderItems on items.parent = $self;
+
+// }
+
+// entity OrderItems {
+//     key parent: Association to Orders;
+//     Key pos: Integer;
+//     quantity: Integer;
+
+// }
+
+entity Orders {
+    key OrderID: Integer;
+    items: Composition of many {
+        key pos: Integer;
+        quantity: Integer;
+    };
 }
