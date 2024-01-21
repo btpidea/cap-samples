@@ -14,7 +14,7 @@ aspect stocks{ stock: Integer}
 entity Books
 { 
     key ID: Integer;
-    title : String;
+    title : String @mandatory;
     author: Association to Authors;
     stock:Integer;
     prices : Integer;

@@ -1,4 +1,4 @@
-//GET http://localhost:4004/odata/v4/say/printHello(input='World')
+# GET http://localhost:4004/odata/v4/admin/Books
 
 
 POST http://localhost:4004/odata/v4/admin/Books
@@ -10,3 +10,5 @@ Content-Type: application/json
       "stock": 95,
       "prices": 100
     }
+
+# DELETE http://localhost:4004/odata/v4/admin/Books/3
