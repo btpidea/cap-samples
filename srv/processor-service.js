@@ -3,7 +3,7 @@ const cds = require('@sap/cds');
 class ProcessorService extends cds.ApplicationService {
     /** Resigter Custom Handler */
     init() {
-        this.before("CREATE", "Incidents", (req) => this.changeUrgencyDueToSubject(req.data));
+        this.before("UPDATE", "Incidents", (req) => this.changeUrgencyDueToSubject(req.data));
         this.before("UPDATE", "Incidents", (req) => this.onUpdate(req));
         return super.init();
     }
